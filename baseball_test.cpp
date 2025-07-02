@@ -6,7 +6,7 @@ public:
 	Baseball game;
 	void assertIllegalArgument(string guessNumber) {
 		try {
-			game.guess(string("12s"));
+			game.guess(guessNumber);
 			FAIL();
 		}
 		catch (exception e) {
@@ -18,6 +18,7 @@ public:
 TEST_F(BaseballFixture, ThrowExceptionWhenInvalidCase) {
 	assertIllegalArgument("12");
 	assertIllegalArgument("12s");
+	assertIllegalArgument("121");
 }
 
 int main() {
