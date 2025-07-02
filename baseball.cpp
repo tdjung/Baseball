@@ -43,11 +43,18 @@ public:
 		}
 
 		int strike = 0;
+		int ball = 0;
 		for (int num = 0; num < 3; num++) {
-			if (guessNumber[num] == question[num]) strike += 1;
+			for (int num2 = 0; num2 < 3; num2++) {
+				if (guessNumber[num] == question[num2]) {
+					if (num == num2)
+						strike += 1;
+					else ball += 1;
+				}
+			}
 		}
 
-		return { false, strike, 0 };
+		return { false, strike, ball };
 	}
 	
 private:
