@@ -43,9 +43,9 @@ public:
 		}
 
 		int strike = 0;
-		for (int i = 0; i < 3; i++)
-			if (guessNumber[i] == question[i])
-				strike +=1;
+		for (int num = 0; num < 3; num++) {
+			if (guessNumber[num] == question[num]) strike += 1;
+		}
 
 		return { false, strike, 0 };
 	}
