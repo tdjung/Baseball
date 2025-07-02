@@ -42,14 +42,13 @@ public:
 			return { true, 3, 0 };
 		}
 
-		int strike = 0;
-		int ball = 0;
-		for (int num = 0; num < 3; num++) {
-			for (int num2 = 0; num2 < 3; num2++) {
-				if (guessNumber[num] == question[num2]) {
-					if (num == num2)
-						strike += 1;
+		int strike = 0, ball = 0;
+		for (int guessIdx = 0; guessIdx < 3; guessIdx++) {
+			for (int answerIdx = 0; answerIdx < 3; answerIdx++) {
+				if (guessNumber[guessIdx] == question[answerIdx]) {
+					if (guessIdx == answerIdx) strike += 1;
 					else ball += 1;
+					break;
 				}
 			}
 		}
