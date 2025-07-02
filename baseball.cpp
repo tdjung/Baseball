@@ -41,7 +41,13 @@ public:
 		if (guessNumber == question) {
 			return { true, 3, 0 };
 		}
-		return { false, 0, 0 };
+
+		int strike = 0;
+		for (int i = 0; i < 3; i++)
+			if (guessNumber[i] == question[i])
+				strike +=1;
+
+		return { false, strike, 0 };
 	}
 	
 private:
